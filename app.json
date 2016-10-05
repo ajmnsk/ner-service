@@ -1,0 +1,6 @@
+{
+  "name": "Named entity recognition (micro)service sample using Akka HTTP",
+  "description": "Simple (micro)service which demonstrates how to accomplish tasks typical for REST service using Akka HTTP.",
+  "website": "",
+  "success_url": ""
+}
