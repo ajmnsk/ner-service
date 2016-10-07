@@ -24,9 +24,9 @@ class NerWorker(pipeline: Pipeline) extends Actor with ActorLogging {
   private val processText: (String, Option[Array[String]]) => Set[EmbeddedToken] = (text: String, tagsToCollect: Option[Array[String]]) => {
     tagsToCollect match {
       case Some(array) =>
-        if (array.length < 1) SNer().processString(pipeline, text)
-        else SNer().processString(pipeline, text, array.toSet)
-      case _ =>  SNer().processString(pipeline, text)
+        if (array.length < 1) SNer().process(pipeline, text, Set.empty[String])
+        else SNer().process(pipeline, text, array.toSet)
+      case _ =>  SNer().process(pipeline, text, Set.empty[String])
     }
   }
 
