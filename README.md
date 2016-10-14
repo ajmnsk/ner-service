@@ -20,16 +20,7 @@ So, the actual work is executed by a stateless ```NerWorker``` actor from  a poo
 
 ## Non-blocking execution
 
-Results of execution, success or failure are assigned to a ```Promise``` object, which is attached to each message.
-
-The project shows the following tasks:
-
-* using ActorEventBus for indirection,
-* using Scala Routing for a pool of workers,
-* non-blocking execution using Promise,
-* testing.
-
-The service provides one REST endpoint.
+Results of execution, ```success``` or ```failure``` are assigned to a ```Promise``` object, which is attached to each request message.
 
 ## Usage
 
@@ -49,7 +40,7 @@ curl -X GET -H 'Content-Type: application/json' http://localhost:9000/ner/herid 
 curl -X GET -H 'Content-Type: application/json' http://localhost:9000/ner/myid -d "{\"tagsToCollect\":[\"LOCATION\"],\"text\": \"Marcora doesn't even have to talk in his mother tongue to spark a reaction: In his adopted hometown of Chatham in Kent, southeast of London, just speaking English with an Italian accent can be enough to provoke a reaction. This is post-Brexit referendum Britain. And it's a place Marcora, who has lived and worked in the UK for 18 years, barely recognizes.\"}"
 ```
 
-### Testing
+## Testing
 
 Execute tests using `test` command:
 
@@ -57,6 +48,17 @@ Execute tests using `test` command:
 $ sbt
 > test
 ```
+
+## Conclusion
+
+The project shows the following tasks:
+
+* using ActorEventBus for indirection,
+* using Scala Routing for a pool of workers,
+* non-blocking execution using Promise,
+* testing.
+
+The service provides one REST endpoint.
 
 ## Author & license
 
