@@ -1,4 +1,4 @@
-Named entity recognition (micro)service sample using Akka HTTP
+Named entity recognition service sample using Akka HTTP
 ============================================================
 
 This project is inspired by [Akka HTTP microservice example from lightbend](http://www.lightbend.com/activator/template/akka-http-microservice),
